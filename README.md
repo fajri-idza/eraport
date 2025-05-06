@@ -1,4 +1,4 @@
-# My Awesome Laravolt Application
+# My Awesome Laravel Application
 
 ## Server Requirements
 1. PHP 8.x
