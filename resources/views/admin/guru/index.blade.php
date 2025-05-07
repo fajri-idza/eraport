@@ -118,3 +118,12 @@
 </div>
 
 @endsection
+
+@if ($errors->any())
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var myModal = new bootstrap.Modal(document.getElementById('addModal'));
+            myModal.show();
+        });
+    </script>
+@endif

@@ -31,7 +31,38 @@ class GuruController extends Controller
             'hp' => 'required|max:15',
             'email' => 'required|email|unique:guru,email',
             'alamat' => 'required',
+        ], [
+            'nama.required' => 'Nama wajib diisi.',
+            'nama.max' => 'Nama maksimal 30 karakter.',
+
+            'jabatan.required' => 'Jabatan wajib diisi.',
+            'jabatan.max' => 'Jabatan maksimal 30 karakter.',
+
+            'user_name.required' => 'Username wajib diisi.',
+            'user_name.max' => 'Username maksimal 30 karakter.',
+            'user_name.unique' => 'Username sudah digunakan.',
+
+            'password.required' => 'Password wajib diisi.',
+
+            'tempat_lahir.required' => 'Tempat lahir wajib diisi.',
+            'tempat_lahir.max' => 'Tempat lahir maksimal 30 karakter.',
+
+            'tanggal_lahir.required' => 'Tanggal lahir wajib diisi.',
+            'tanggal_lahir.date' => 'Format tanggal lahir tidak valid.',
+
+            'jenis_kelamin.required' => 'Jenis kelamin wajib diisi.',
+            'jenis_kelamin.max' => 'Jenis kelamin maksimal 15 karakter.',
+
+            'hp.required' => 'Nomor HP wajib diisi.',
+            'hp.max' => 'Nomor HP maksimal 15 karakter.',
+
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email sudah digunakan.',
+
+            'alamat.required' => 'Alamat wajib diisi.',
         ]);
+
 
         $data = $request->all();
         $data['password'] = bcrypt($request->password);

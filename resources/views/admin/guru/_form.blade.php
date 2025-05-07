@@ -1,3 +1,13 @@
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Terjadi kesalahan!</strong>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="form-group">
     <label>Nama</label>
     <input type="text" name="nama" class="form-control" value="{{ old('nama', $g->nama ?? '') }}" required>

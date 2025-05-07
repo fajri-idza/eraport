@@ -22,9 +22,9 @@ class PesertaDidikController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nisn' => 'required',
+            'nisn' => 'required|numeric|digits_between:1,12',
             'nama_peserta_didik' => 'required|max:30',
-            'nis' => 'required|integer',
+            'nis' => 'required|numeric|digits_between:1,8',
             'id_kelas' => 'required',
             'tempat_lahir' => 'required|max:30',
             'tanggal_lahir' => 'required|date',
@@ -36,6 +36,31 @@ class PesertaDidikController extends Controller
             'alamat_orang_tua' => 'required|max:100',
             'wali_peserta_didik' => '',
             'alamat_wali_peserta_didik' => ''
+        ], [
+            'nisn.required' => 'NISN wajib diisi.',
+            'nisn.digits_between' => 'NISN melewati jumlah batas karakter maksimal 12 angka.',
+            'nama_peserta_didik.required' => 'Nama peserta didik wajib diisi.',
+            'nama_peserta_didik.max' => 'Nama peserta didik maksimal 30 karakter.',
+            'nis.required' => 'NIS wajib diisi.',
+            'nis.numeric' => 'NIS harus berupa angka',
+            'nis.digits_between' => 'NIS melewati jumlah batas karakter maksimal 8 angka.',
+            'id_kelas.required' => 'Kelas wajib dipilih.',
+            'tempat_lahir.required' => 'Tempat lahir wajib diisi.',
+            'tempat_lahir.max' => 'Tempat lahir maksimal 30 karakter.',
+            'tanggal_lahir.required' => 'Tanggal lahir wajib diisi.',
+            'tanggal_lahir.date' => 'Format tanggal lahir tidak valid.',
+            'jenis_kelamin.required' => 'Jenis kelamin wajib diisi.',
+            'jenis_kelamin.max' => 'Jenis kelamin maksimal 10 karakter.',
+            'agama.required' => 'Agama wajib diisi.',
+            'agama.max' => 'Agama maksimal 10 karakter.',
+            'pendidikan_sebelumnya.required' => 'Pendidikan sebelumnya wajib diisi.',
+            'pendidikan_sebelumnya.max' => 'Pendidikan sebelumnya maksimal 10 karakter.',
+            'alamat_peserta_didik.required' => 'Alamat peserta didik wajib diisi.',
+            'alamat_peserta_didik.max' => 'Alamat peserta didik maksimal 100 karakter.',
+            'nama_orang_tua.required' => 'Nama orang tua wajib diisi.',
+            'nama_orang_tua.max' => 'Nama orang tua maksimal 30 karakter.',
+            'alamat_orang_tua.required' => 'Alamat orang tua wajib diisi.',
+            'alamat_orang_tua.max' => 'Alamat orang tua maksimal 100 karakter.',
         ]);
 
         PesertaDidik::create($request->all());
