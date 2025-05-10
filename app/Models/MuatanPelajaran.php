@@ -16,7 +16,7 @@ class MuatanPelajaran extends Model
         'id_guru',
         'id_kelas',
         'is_mulok',
-        'capaian_kompetensi',
+        'kkm',
     ];
 
     public function guru()

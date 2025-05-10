@@ -100,6 +100,10 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        <div class="form-group">
+            <label>Tanggal Cetak</label>
+            <input type="date" name="tanggal_cetak" class="form-control" required>
+        </div>
 
         <h5 class="mt-4">Prestasi</h5>
         <div id="prestasi-area"></div>

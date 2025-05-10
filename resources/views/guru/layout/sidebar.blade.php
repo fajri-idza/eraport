@@ -27,7 +27,7 @@
         <a class="nav-link" href="{{ route('guru.nilai.index') }}">
             <span>Input Nilai</span></a>
     </li>
-
+    @if(Auth::guard('guru')->user()->type === 'KELAS')
     <li class="nav-item">
         <a class="nav-link" href="{{ route('guru.eraport.index') }}">
             <span>Input Nilai E-Raport</span></a>
@@ -37,6 +37,7 @@
         <a class="nav-link" href="{{ route('guru.cetak.eraport') }}">
             <span>Cetak E-Raport</span></a>
     </li>
+    @endif
     <li class="nav-item">
         <a class="nav-link" href="{{ route('guru.profile.edit') }}">
             <span>Pengaturan</span></a>

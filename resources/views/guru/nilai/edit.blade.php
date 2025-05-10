@@ -61,11 +61,14 @@
         <div id="nilai-container">
             @foreach($nilai->details as $detail)
                 <div class="row mb-2">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <input type="text" name="materi[]" class="form-control" value="{{ $detail->materi }}" required>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <input type="number" name="nilai[]" class="form-control" value="{{ $detail->nilai }}" required>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="capaian_kompetensi[]" class="form-control" value="{{ $detail->capaian_kompetensi }}">
                     </div>
                     <div class="col-md-2">
                         <button type="button" class="btn btn-danger" onclick="this.parentElement.parentElement.remove()">X</button>
@@ -89,11 +92,14 @@ function addNilai() {
     var container = document.getElementById('nilai-container');
     var html = `
         <div class="row mb-2">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <input type="text" name="materi[]" class="form-control" placeholder="Nama Materi" required>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <input type="number" name="nilai[]" class="form-control" placeholder="Nilai" required>
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="capaian_kompetensi[]" class="form-control" placeholder="Capaian Kompetensi">
             </div>
             <div class="col-md-2">
                 <button type="button" class="btn btn-danger" onclick="this.parentElement.parentElement.remove()">X</button>

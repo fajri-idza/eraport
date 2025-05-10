@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('nilai_id');
             $table->string('materi');
             $table->integer('nilai');
+            $table->string('capaian_kompetensi')->nullable();
             $table->timestamps();
         });
     }

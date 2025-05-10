@@ -24,7 +24,7 @@ class MuatanPelajaranController extends Controller
             'nama_muatan_pelajaran' => 'required|string|max:30',
             'id_guru' => 'required|exists:guru,id',
             'id_kelas' => 'required|exists:kelas,id',
-            'capaian_kompetensi' => 'required|string|max:30',
+            'kkm' => 'required',
         ]);
 
         $data = $request->all();
@@ -40,7 +40,7 @@ class MuatanPelajaranController extends Controller
             'nama_muatan_pelajaran' => 'required|string|max:30',
             'id_guru' => 'required|exists:guru,id',
             'id_kelas' => 'required|exists:kelas,id',
-            'capaian_kompetensi' => 'required|string|max:30',
+            'kkm' => 'required',
         ]);
         $data = $request->all();
         $data['is_mulok'] = $request->has('is_mulok');

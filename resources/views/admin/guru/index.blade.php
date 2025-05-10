@@ -20,7 +20,9 @@
                     <thead>
                         <tr>
                             <th>Nama</th>
+                            <th>NIP</th>
                             <th>Jabatan</th>
+                            <th>Jenis Guru</th>
                             <th>Username</th>
                             <th>Tempat Tanggal Lahir</th>
                             <th>Jenis Kelamin</th>
@@ -34,7 +36,9 @@
                         @foreach ($guru as $g)
                         <tr>
                             <td>{{ $g->nama }}</td>
+                            <td>{{ $g->nip }}</td>
                             <td>{{ $g->jabatan }}</td>
+                            <td>{{ $g->type }}</td>
                             <td>{{ $g->user_name }}</td>
                             <td>{{ $g->tempat_lahir }}, {{ $g->tanggal_lahir->format('d F Y') }}</td>
                             <td>{{ $g->jenis_kelamin }}</td>

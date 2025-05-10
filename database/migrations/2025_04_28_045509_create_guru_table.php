@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama',30);
             $table->string('jabatan',30);
+            $table->unsignedBigInteger('nip');
+            $table->enum('type',['MAPEL','KELAS']);
             $table->string('user_name',30);
             $table->string('password');
             $table->string('tempat_lahir',30);

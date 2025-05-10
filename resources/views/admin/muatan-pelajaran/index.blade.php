@@ -25,7 +25,7 @@
                             <th>Nama</th>
                             <th>Guru</th>
                             <th>Kelas</th>
-                            <th>Capaian Kompetensi</th>
+                            <th>KKM</th>
                             <th>Mulok/Pilihan</th>
                             <th>Aksi</th>
                         </tr>
@@ -36,7 +36,7 @@
                             <td>{{ $m->nama_muatan_pelajaran }}</td>
                             <td>{{ $m->guru?->nama ?? '-' }}</td>
                             <td>{{ $m->kelas->nama_kelas }}</td>
-                            <td>{{ $m->capaian_kompetensi }}</td>
+                            <td>{{ $m->kkm }}</td>
                             <td>{{ $m->is_mulok ? 'Ya' : 'Tidak' }}</td>
                             <td>
                                 <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editModal{{ $m->id }}">Edit</button>
@@ -83,8 +83,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label>Capaian Kompetensi</label>
-                                                <input type="text" name="capaian_kompetensi" class="form-control" value="{{ $m->capaian_kompetensi }}" required>
+                                                <label>KKM</label>
+                                                <input type="number" name="kkm" class="form-control" step="any" value="{{ $m->kkm }}" required>
                                             </div>
                                             <div class="form-group form-check">
                                                 <input type="checkbox" class="form-check-input" id="is_mulok" name="is_mulok" value="{{ $m->is_mulok }}">
@@ -149,8 +149,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Capaian Kompetensi</label>
-                        <input type="text" name="capaian_kompetensi" class="form-control" required>
+                        <label>KKM</label>
+                        <input type="number" name="kkm" step="any" class="form-control" required>
                     </div>
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="is_mulok" name="is_mulok" value="1">

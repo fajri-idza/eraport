@@ -20,6 +20,7 @@
                 <th>Tahun</th>
                 <th>Semester</th>
                 <th>Materi & Nilai</th>
+                <th>Capaian Kompetensi</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -36,6 +37,13 @@
                         <ul>
                             @foreach($n->details as $d)
                                 <li>{{ $d->materi }}: {{ $d->nilai }}</li>
+                            @endforeach
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            @foreach($n->details as $d)
+                                <li>{{ $d->capaian_kompetensi ?? '-' }}</li>
                             @endforeach
                         </ul>
                     </td>

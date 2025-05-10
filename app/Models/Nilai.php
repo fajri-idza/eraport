@@ -31,4 +31,30 @@ class Nilai extends Model
     {
         return $this->hasMany(DetailNilai::class);
     }
+
+    public function rataRata()
+    {
+        return $this->details->avg('nilai'); // ambil rata-rata dari relasi detail
+    }
+
+    public function predikat()
+    {
+        $rata = $this->rataRata();
+
+        if ($rata < 75) {
+            return 'D';
+        } elseif ($rata <= 83) {
+            return 'C';
+        } elseif ($rata <= 92) {
+            return 'B';
+        } elseif ($rata <= 100) {
+            return 'A';
+        } else {
+            return '-';
+        }
+    }
+    public function capaianKompetensi()
+    {
+        return $this->details->pluck('capaian_kompetensi')->filter()->unique()->implode(', ');
+    }
 }

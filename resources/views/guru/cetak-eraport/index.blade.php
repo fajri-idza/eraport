@@ -32,7 +32,9 @@
                         <td>{{ $eraport->semester}}</td>
                         <td>
                             <a href="{{ route('guru.eraport.detail', $eraport->id) }}" class="btn btn-info">Lihat</a>
-                            <a href="{{ route('guru.eraport.print', $eraport->id) }}" class="btn btn-success">Cetak PDF</a>
+                            <a href="{{ route('guru.eraport.download', $eraport->id) }}" class="btn btn-success">Download E-raport</a>
+                            <a href="{{ route('guru.eraport.print', $eraport->id) }}" target="_blank" class="btn btn-success">Print E-Raport</a>
+                            <a href="{{ route('guru.eraport.print.data-diri', $eraport->id) }}" target="_blank" class="btn btn-success">Print Data Diri</a>
                         </td>
                     </tr>
                 @endforeach

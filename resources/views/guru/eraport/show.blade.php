@@ -65,6 +65,10 @@
         <label>Tinggal Kelas</label>
         <input type="text" class="form-control" value="{{ $eraport->tinggal_kelas }}" disabled>
     </div>
+    <div class="form-group">
+            <label>Tanggal Cetak</label>
+            <input type="date" name="tanggal_lahir" class="form-control" value="{{ $eraport->tanggal_cetak }}" disabled>
+        </div>
 
     <!-- Prestasi -->
     <h4>Prestasi</h4>

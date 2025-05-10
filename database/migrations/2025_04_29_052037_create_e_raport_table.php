@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('tinggal_kelas',30);
             $table->year('tahun');
             $table->integer('semester');
+            $table->date('tanggal_cetak');
             $table->timestamps();
         });
     }

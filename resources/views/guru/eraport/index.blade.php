@@ -17,6 +17,7 @@
                     <th rowspan="2">Nama Siswa</th>
                     <th rowspan="2">NISN</th>
                     <th rowspan="2">Kelas</th>
+                    <th rowspan="2">Semester</th>
                     <th rowspan="2">Ekstrakurikuler</th> <!-- Kolom Ekstrakurikuler -->
                     <th colspan="3" class="text-center">Kehadiran</th>
                     <th rowspan="2">Catatan</th>
@@ -36,6 +37,7 @@
                     <td>{{ $eraport->siswa->nama_peserta_didik ?? '-' }}</td>
                     <td>{{ $eraport->nisn }}</td>
                     <td>{{ $eraport->kelas->nama_kelas ?? '-' }}</td>
+                    <td>{{ $eraport->semester ?? '-' }}</td>
                     <td>
                         <!-- Menampilkan ekstrakurikuler terkait, jika ada -->
                         @foreach($eraport->ekstrakurikuler as $ekstra)

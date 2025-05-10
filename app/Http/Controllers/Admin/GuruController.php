@@ -23,8 +23,10 @@ class GuruController extends Controller
         $request->validate([
             'nama' => 'required|max:30',
             'jabatan' => 'required|max:30',
+            'nip' => 'required|numeric|digits_between:1,12',
             'user_name' => 'required|max:30|unique:guru,user_name',
             'password' => 'required',
+            'type' => 'required',
             'tempat_lahir' => 'required|max:30',
             'tanggal_lahir' => 'required|date',
             'jenis_kelamin' => 'required|max:15',
@@ -34,6 +36,7 @@ class GuruController extends Controller
         ], [
             'nama.required' => 'Nama wajib diisi.',
             'nama.max' => 'Nama maksimal 30 karakter.',
+            'nip.digits_between' => 'NIP melewati jumlah batas karakter maksimal 12 angka.',
 
             'jabatan.required' => 'Jabatan wajib diisi.',
             'jabatan.max' => 'Jabatan maksimal 30 karakter.',
@@ -43,6 +46,7 @@ class GuruController extends Controller
             'user_name.unique' => 'Username sudah digunakan.',
 
             'password.required' => 'Password wajib diisi.',
+            'type.required' => 'Jenis Guru wajib diisi.',
 
             'tempat_lahir.required' => 'Tempat lahir wajib diisi.',
             'tempat_lahir.max' => 'Tempat lahir maksimal 30 karakter.',
@@ -79,6 +83,7 @@ class GuruController extends Controller
         $request->validate([
             'nama' => 'required|max:30',
             'jabatan' => 'required|max:30',
+            'nip' => 'required|numeric|digits_between:1,12',
             'user_name' => 'required|max:30|unique:guru,user_name,' . $guru->id,
             'tempat_lahir' => 'required|max:30',
             'tanggal_lahir' => 'required|date',
@@ -86,6 +91,38 @@ class GuruController extends Controller
             'hp' => 'required|max:15',
             'email' => 'required|email|unique:guru,email,' . $guru->id,
             'alamat' => 'required',
+            'type' => 'required',
+        ], [
+            'nama.required' => 'Nama wajib diisi.',
+            'nama.max' => 'Nama maksimal 30 karakter.',
+            'nip.digits_between' => 'NIP melewati jumlah batas karakter maksimal 12 angka.',
+
+            'jabatan.required' => 'Jabatan wajib diisi.',
+            'jabatan.max' => 'Jabatan maksimal 30 karakter.',
+
+            'user_name.required' => 'Username wajib diisi.',
+            'user_name.max' => 'Username maksimal 30 karakter.',
+            'user_name.unique' => 'Username sudah digunakan.',
+
+            'type.required' => 'Jenis Guru wajib diisi.',
+
+            'tempat_lahir.required' => 'Tempat lahir wajib diisi.',
+            'tempat_lahir.max' => 'Tempat lahir maksimal 30 karakter.',
+
+            'tanggal_lahir.required' => 'Tanggal lahir wajib diisi.',
+            'tanggal_lahir.date' => 'Format tanggal lahir tidak valid.',
+
+            'jenis_kelamin.required' => 'Jenis kelamin wajib diisi.',
+            'jenis_kelamin.max' => 'Jenis kelamin maksimal 15 karakter.',
+
+            'hp.required' => 'Nomor HP wajib diisi.',
+            'hp.max' => 'Nomor HP maksimal 15 karakter.',
+
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email sudah digunakan.',
+
+            'alamat.required' => 'Alamat wajib diisi.',
         ]);
 
         $data = $request->except('password');

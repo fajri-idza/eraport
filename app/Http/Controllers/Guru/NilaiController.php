@@ -36,6 +36,7 @@ class NilaiController extends Controller
             'semester' => 'required',
             'materi.*' => 'required',
             'nilai.*' => 'required|numeric',
+            'capaian_kompetensi.*' => '',
         ]);
 
         $nilai = Nilai::create([
@@ -51,6 +52,7 @@ class NilaiController extends Controller
                 'nilai_id' => $nilai->id,
                 'materi' => $materi,
                 'nilai' => $request->nilai[$index],
+                'capaian_kompetensi' => $request->capaian_kompetensi[$index],
             ]);
         }
 
@@ -77,6 +79,7 @@ class NilaiController extends Controller
             'semester' => 'required',
             'materi.*' => 'required',
             'nilai.*' => 'required|numeric',
+            'capaian_kompetensi.*' => '',
         ]);
 
         $nilai = Nilai::findOrFail($id);
@@ -98,6 +101,7 @@ class NilaiController extends Controller
                 'nilai_id' => $nilai->id,
                 'materi' => $materi,
                 'nilai' => $request->nilai[$index],
+                'capaian_kompetensi' => $request->capaian_kompetensi[$index],
             ]);
         }
 

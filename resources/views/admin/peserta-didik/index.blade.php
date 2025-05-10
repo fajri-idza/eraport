@@ -42,7 +42,7 @@
                             <td>{{ $g->nama_peserta_didik }}</td>
                             <td>{{ $g->nis }}</td>
                             <td>{{ $g->kelas->nama_kelas }}</td>
-                            <td>{{ $g->tempat_lahir }},{{ $g->tanggal_lahir->format('d F Y') }}</td>
+                            <td>{{ $g->tempat_lahir }},{{ \Carbon\Carbon::parse($g->tanggal_lahir)->translatedFormat('j F Y') }}</td>
                             <td>{{ $g->jenis_kelamin }}</td>
                             <td>{{ $g->agama }}</td>
                             <td>{{ $g->pendidikan_sebelumnya }}</td>

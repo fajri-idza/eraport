@@ -120,6 +120,10 @@
             <label>Catatan</label>
             <textarea name="catatan" class="form-control" rows="3" readonly>{{ $eraport->catatan }}</textarea>
         </div>
+        <div class="form-group">
+            <label>Tanggal Cetak</label>
+            <input type="date" name="tanggal_lahir" class="form-control" value="{{ $eraport->tanggal_cetak }}" disabled>
+        </div>
 
         <a href="{{ route('guru.eraport.print', $eraport->id) }}" class="btn btn-success mt-4">Cetak E-Raport ke PDF</a>
     </div>

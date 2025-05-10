@@ -49,7 +49,7 @@
         <td style="width: 6%"><strong>Fase</strong></td><td>: {{ $eraport->kelas->fase }}</td>
     </tr>
     <tr>
-        <td><strong>Sekolah</strong></td><td>:{{ $kepsek->nama_sekolah }}</td>
+        <td><strong>Sekolah</strong></td><td>: {{ $kepsek->nama_sekolah }}</td>
         <td style="width: 6%"><strong>Semester</strong></td><td>: {{ $eraport->semester }}</td>
     </tr>
     <tr><td></td><td><td style="width: 20%"><strong>Tahun Pelajaran</strong></td><td>: {{ $eraport->tahun }}/{{ $eraport->tahun+1 }}</td></td></tr>
@@ -293,7 +293,11 @@
         </td>
     </tr>
 </table>
-
+<script>
+    window.onload = function () {
+        window.print();
+    };
+</script>
 
 </body>
 </html>

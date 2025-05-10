@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_guru');
             $table->unsignedBigInteger('id_kelas');
             $table->boolean('is_mulok')->default(false);
-            $table->string('capaian_kompetensi',30);
+            $table->float('kkm');
             $table->timestamps();
         });
     }

@@ -70,8 +70,9 @@ Route::prefix('admin')
         Route::resource('eraport', \App\Http\Controllers\Guru\EraportController::class);
         Route::get('cetak-eraport', [\App\Http\Controllers\Guru\EraportCetakController::class,'index'])->name('cetak.eraport');
         Route::get('cetak-eraport/detail/{id}', [\App\Http\Controllers\Guru\EraportCetakController::class, 'detail'])->name('eraport.detail');
-        Route::get('cetak-eraport/print/{id}', [\App\Http\Controllers\Guru\EraportCetakController::class, 'cetakPdf'])->name('eraport.print');
-
+        Route::get('cetak-eraport/download/{id}', [\App\Http\Controllers\Guru\EraportCetakController::class, 'cetakPdf'])->name('eraport.download');
+        Route::get('cetak-eraport/print/{id}', [\App\Http\Controllers\Guru\EraportCetakController::class, 'printPdf'])->name('eraport.print');
+        Route::get('cetak-eraport/data-diri/print/{nisn}', [\App\Http\Controllers\Guru\EraportCetakController::class, 'cetakDataDiri'])->name('eraport.print.data-diri');
         Route::get('profile', [\App\Http\Controllers\Guru\PengaturanController::class, 'editProfile'])->name('profile.edit');
         Route::post('profile', [\App\Http\Controllers\Guru\PengaturanController::class, 'updateProfile'])->name('profile.update');
     });

@@ -21,7 +21,8 @@ class Eraport extends Model
         'naik_kelas',
         'tinggal_kelas',
         'tahun',
-        'semester'
+        'semester',
+        'tanggal_cetak'
     ];
 
     public function siswa()

@@ -34,6 +34,8 @@ class GuruImport implements ToModel, WithHeadingRow, SkipsOnFailure, SkipsOnErro
             'nama'           => $row['nama'],
             'jabatan'        => $row['jabatan'],
             'user_name'      => $row['user_name'],
+            'nip'            => $row['nip'],
+            'type'           => $row['type'],
             'password'       => Hash::make($row['password']),
             'tempat_lahir'   => $row['tempat_lahir'],
             'tanggal_lahir'  => $tanggal_lahir,
@@ -49,6 +51,8 @@ class GuruImport implements ToModel, WithHeadingRow, SkipsOnFailure, SkipsOnErro
         return [
             '*.nama'           => 'required|string|max:30',
             '*.jabatan'        => 'required|string|max:30',
+            '*.nip'            => 'required|numeric|digits_between:1,12',
+            '*.type'           => 'required',
             '*.user_name'      => 'required|string|max:30|unique:guru,user_name',
             '*.password'       => 'required|string|min:6',
             '*.tempat_lahir'   => 'required|string|max:30',

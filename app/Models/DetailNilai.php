@@ -10,7 +10,7 @@ class DetailNilai extends Model
     use HasFactory;
 
     protected $table = 'detail_nilai';
-    protected $fillable = ['nilai_id', 'materi', 'nilai'];
+    protected $fillable = ['nilai_id', 'materi', 'nilai','capaian_kompetensi'];
 
     public function nilai()
     {

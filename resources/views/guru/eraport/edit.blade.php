@@ -106,6 +106,11 @@
             @enderror
         </div>
 
+        <div class="form-group">
+            <label>Tanggal Cetak</label>
+            <input type="date" name="tanggal_lahir" class="form-control" value="{{ $eraport->tanggal_cetak }}" required>
+        </div>
+
         <h5 class="mt-4">Prestasi</h5>
         <div id="prestasi-area">
             @foreach($eraport->prestasi as $prestasi)

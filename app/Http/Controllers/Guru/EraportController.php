@@ -41,6 +41,7 @@ class EraportController extends Controller
             'tinggal_kelas' => 'required|string',
             'tahun' => 'required|numeric',
             'semester' => 'required|in:1,2',
+            'tanggal_cetak' => 'required|date',
             'prestasi' => 'array|nullable',
             'prestasi.*.nama_prestasi' => 'string|nullable',
             'prestasi.*.nilai' => 'string|nullable',
@@ -61,6 +62,7 @@ class EraportController extends Controller
             'tinggal_kelas' => $request->tinggal_kelas,
             'tahun' => $request->tahun,
             'semester' => $request->semester,
+            'tanggal_cetak' => $request->tanggal_cetak
         ]);
 
         // Simpan prestasi jika ada
@@ -115,6 +117,7 @@ class EraportController extends Controller
             'tinggal_kelas' => 'required|string',
             'tahun' => 'required|numeric',
             'semester' => 'required|in:1,2',
+            'tanggal_cetak' => 'required|date',
             'prestasi' => 'array|nullable',
             'prestasi.*.nama_prestasi' => 'string|nullable',
             'prestasi.*.nilai' => 'string|nullable',
@@ -138,6 +141,7 @@ class EraportController extends Controller
             'tinggal_kelas' => $request->tinggal_kelas,
             'tahun' => $request->tahun,
             'semester' => $request->semester,
+            'tanggal_cetak' => $request->tanggal_cetak,
         ]);
 
         // Update atau simpan prestasi jika ada

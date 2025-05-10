@@ -17,6 +17,18 @@
     <input type="text" name="jabatan" class="form-control" value="{{ old('jabatan', $g->jabatan ?? '') }}" required>
 </div>
 <div class="form-group">
+    <label>NIP</label>
+    <input type="number" name="nip" class="form-control" value="{{ old('nip', $g->nip ?? '') }}" required>
+</div>
+<div class="form-group">
+    <label>Jenis Guru</label>
+    <select name="type" class="form-control" required>
+        <option value="">-- Pilih --</option>
+        <option value="MAPEL" {{ (old('type', $g->type ?? '') == 'MAPEL') ? 'selected' : '' }}>Guru Mata Pelajaran</option>
+        <option value="KELAS" {{ (old('type', $g->type ?? '') == 'KELAS') ? 'selected' : '' }}>Guru Kelas</option>
+    </select>
+</div>
+<div class="form-group">
     <label>Username</label>
     <input type="text" name="user_name" class="form-control" value="{{ old('user_name', $g->user_name ?? '') }}" required>
 </div>
