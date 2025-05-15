@@ -83,7 +83,7 @@ class GuruController extends Controller
         $request->validate([
             'nama' => 'required|max:30',
             'jabatan' => 'required|max:30',
-            'nip' => 'required|numeric|digits_between:1,12',
+            'nip' => 'required|numeric|digits_between:1,18',
             'user_name' => 'required|max:30|unique:guru,user_name,' . $guru->id,
             'tempat_lahir' => 'required|max:30',
             'tanggal_lahir' => 'required|date',
@@ -95,7 +95,7 @@ class GuruController extends Controller
         ], [
             'nama.required' => 'Nama wajib diisi.',
             'nama.max' => 'Nama maksimal 30 karakter.',
-            'nip.digits_between' => 'NIP melewati jumlah batas karakter maksimal 12 angka.',
+            'nip.digits_between' => 'NIP melewati jumlah batas karakter maksimal 18 angka.',
 
             'jabatan.required' => 'Jabatan wajib diisi.',
             'jabatan.max' => 'Jabatan maksimal 30 karakter.',

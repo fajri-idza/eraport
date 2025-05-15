@@ -51,7 +51,7 @@ class GuruImport implements ToModel, WithHeadingRow, SkipsOnFailure, SkipsOnErro
         return [
             '*.nama'           => 'required|string|max:30',
             '*.jabatan'        => 'required|string|max:30',
-            '*.nip'            => 'required|numeric|digits_between:1,12',
+            '*.nip'            => 'required|numeric|digits_between:1,18',
             '*.type'           => 'required',
             '*.user_name'      => 'required|string|max:30|unique:guru,user_name',
             '*.password'       => 'required|string|min:6',
