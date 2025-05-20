@@ -16,7 +16,7 @@ class Guru extends Authenticatable
     protected $fillable = [
         'nama', 'jabatan', 'user_name', 'password',
         'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin',
-        'hp', 'email', 'alamat', 'type', 'nip'
+        'hp', 'email', 'alamat', 'type', 'nip','status_guru'
     ];
 
     protected $hidden = [

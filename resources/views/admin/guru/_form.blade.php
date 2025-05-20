@@ -17,7 +17,15 @@
     <input type="text" name="jabatan" class="form-control" value="{{ old('jabatan', $g->jabatan ?? '') }}" required>
 </div>
 <div class="form-group">
-    <label>NIP</label>
+    <label>Status Guru</label>
+    <select name="status_guru" class="form-control" required>
+        <option value="">-- Pilih --</option>
+        <option value="HONORER" {{ (old('type', $g->status_guru ?? '') == 'HONORER') ? 'selected' : '' }}>Honorer</option>
+        <option value="PNS" {{ (old('type', $g->status_guru ?? '') == 'PNS') ? 'selected' : '' }}>PNS</option>
+    </select>
+</div>
+<div class="form-group">
+    <label>NIP/NIK</label>
     <input type="number" name="nip" class="form-control" value="{{ old('nip', $g->nip ?? '') }}" required>
 </div>
 <div class="form-group">

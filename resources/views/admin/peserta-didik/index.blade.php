@@ -28,8 +28,10 @@
                             <th>Agama</th>
                             <th>Pendidikan Sebelumnya</th>
                             <th>Alamat Peserta Didik</th>
-                            <th>Nama Orang Tua</th>
-                            <th>Alamat Orang Tua</th>
+                            <th>Nama Ayah</th>
+                            <th>Alamat Ayah</th>
+                            <th>Nama Ibu</th>
+                            <th>Alamat Ibu</th>
                             <th>Wali Peserta Didik</th>
                             <th>Alamat Wali Peserta Didik</th>
                             <th>Aksi</th>
@@ -47,8 +49,10 @@
                             <td>{{ $g->agama }}</td>
                             <td>{{ $g->pendidikan_sebelumnya }}</td>
                             <td>{{ $g->alamat_peserta_didik }}</td>
-                            <td>{{ $g->nama_orang_tua }}</td>
-                            <td>{{ $g->alamat_orang_tua }}</td>
+                            <td>{{ $g->nama_ayah }}</td>
+                            <td>{{ $g->alamat_ayah }}</td>
+                            <td>{{ $g->nama_ibu }}</td>
+                            <td>{{ $g->alamat_ibu }}</td>
                             <td>{{ $g->wali_peserta_didik }}</td>
                             <td>{{ $g->alamat_wali_peserta_didik }}</td>
                             <td>

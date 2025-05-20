@@ -20,7 +20,8 @@
                     <thead>
                         <tr>
                             <th>Nama</th>
-                            <th>NIP</th>
+                            <th>Status Guru</th>
+                            <th>NIP/NIK</th>
                             <th>Jabatan</th>
                             <th>Jenis Guru</th>
                             <th>Username</th>
@@ -36,6 +37,7 @@
                         @foreach ($guru as $g)
                         <tr>
                             <td>{{ $g->nama }}</td>
+                            <td>{{ $g->status_guru }}</td>
                             <td>{{ $g->nip }}</td>
                             <td>{{ $g->jabatan }}</td>
                             <td>{{ $g->type }}</td>

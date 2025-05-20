@@ -25,8 +25,10 @@ class PesertaDidik extends Model
         'agama',
         'pendidikan_sebelumnya',
         'alamat_peserta_didik',
-        'nama_orang_tua',
-        'alamat_orang_tua',
+        'nama_ayah',
+        'alamat_ayah',
+        'nama_ibu',
+        'alamat_ibu',
         'wali_peserta_didik',
         'alamat_wali_peserta_didik'
     ];

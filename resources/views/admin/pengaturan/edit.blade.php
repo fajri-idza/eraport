@@ -10,6 +10,16 @@
     @if(session('success'))
     <div style="color: green;">{{ session('success') }}</div>
     @endif
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Terjadi kesalahan!</strong>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
     <form action="{{ route('admin.profile.update') }}" method="POST">
         @csrf

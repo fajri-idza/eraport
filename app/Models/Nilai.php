@@ -10,7 +10,7 @@ class Nilai extends Model
     use HasFactory;
 
     protected $table ='nilai';
-    protected $fillable = ['nisn', 'id_muatan_pelajaran','id_kelas', 'tahun', 'semester'];
+    protected $fillable = ['nisn', 'id_muatan_pelajaran','id_kelas', 'tahun', 'semester','guru_id'];
 
     public function siswa()
     {
@@ -53,6 +53,7 @@ class Nilai extends Model
             return '-';
         }
     }
+
     public function capaianKompetensi()
     {
         return $this->details->pluck('capaian_kompetensi')->filter()->unique()->implode(', ');

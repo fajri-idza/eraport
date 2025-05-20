@@ -33,6 +33,7 @@ class GuruController extends Controller
             'hp' => 'required|max:15',
             'email' => 'required|email|unique:guru,email',
             'alamat' => 'required',
+            'status_guru' => 'required',
         ], [
             'nama.required' => 'Nama wajib diisi.',
             'nama.max' => 'Nama maksimal 30 karakter.',
@@ -92,6 +93,7 @@ class GuruController extends Controller
             'email' => 'required|email|unique:guru,email,' . $guru->id,
             'alamat' => 'required',
             'type' => 'required',
+            'status_guru' => 'required',
         ], [
             'nama.required' => 'Nama wajib diisi.',
             'nama.max' => 'Nama maksimal 30 karakter.',

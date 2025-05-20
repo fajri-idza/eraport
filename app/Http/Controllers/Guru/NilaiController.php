@@ -9,12 +9,20 @@ use Illuminate\Http\Request;
 use App\Models\MuatanPelajaran;
 use App\Http\Controllers\Controller;
 use App\Models\Kelas;
+use Illuminate\Support\Facades\Auth;
 
 class NilaiController extends Controller
 {
     public function index()
     {
-        $nilai = Nilai::with(['siswa', 'muatan', 'details','kelas'])->paginate(10);
+        $guru = Auth::guard('guru')->user();
+
+        if($guru->type === 'MAPEL'){
+            $nilai = Nilai::with(['siswa', 'muatan', 'details','kelas'])->where('guru_id',$guru->id)->paginate(10);
+        }else{
+            $nilai = Nilai::with(['siswa', 'muatan', 'details','kelas'])->paginate(10);
+        }
+
         return view('guru.nilai.index', compact('nilai'));
     }
 
@@ -39,8 +47,10 @@ class NilaiController extends Controller
             'capaian_kompetensi.*' => '',
         ]);
 
+        $guru = Auth::guard('guru')->user();
         $nilai = Nilai::create([
             'nisn' => $request->nisn,
+            'guru_id' => $guru->id,
             'id_muatan_pelajaran' => $request->id_muatan_pelajaran,
             'id_kelas' => $request->id_kelas,
             'tahun' => $request->tahun,

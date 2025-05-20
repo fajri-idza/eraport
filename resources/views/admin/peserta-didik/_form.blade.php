@@ -58,12 +58,20 @@
     <textarea name="alamat_peserta_didik" class="form-control" required>{{ old('alamat_peserta_didik', $g->alamat_peserta_didik ?? '') }}</textarea>
 </div>
 <div class="form-group">
-    <label>Nama Orang Tua</label>
-    <input type="text" name="nama_orang_tua" class="form-control" value="{{ old('nama_orang_tua', $g->nama_orang_tua ?? '') }}" required>
+    <label>Nama Ayah</label>
+    <input type="text" name="nama_ayah" class="form-control" value="{{ old('nama_ayah', $g->nama_ayah ?? '') }}" required>
 </div>
 <div class="form-group">
-    <label>Alamat Orang Tua</label>
-    <textarea name="alamat_orang_tua" class="form-control" required>{{ old('alamat_orang_tua', $g->alamat_orang_tua ?? '') }}</textarea>
+    <label>Alamat Ayah</label>
+    <textarea name="alamat_ayah" class="form-control" required>{{ old('alamat_ayah', $g->alamat_ayah ?? '') }}</textarea>
+</div>
+<div class="form-group">
+    <label>Nama Ibu</label>
+    <input type="text" name="nama_ibu" class="form-control" value="{{ old('nama_ibu', $g->nama_ibu ?? '') }}" required>
+</div>
+<div class="form-group">
+    <label>Alamat Ibu</label>
+    <textarea name="alamat_ibu" class="form-control" required>{{ old('alamat_ibu', $g->alamat_ibu ?? '') }}</textarea>
 </div>
 <div class="form-group">
     <label>Wali Peserta Didik</label>

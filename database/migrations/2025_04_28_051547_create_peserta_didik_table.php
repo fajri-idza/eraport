@@ -22,8 +22,10 @@ return new class extends Migration
             $table->string('agama',10);
             $table->string('pendidikan_sebelumnya',10);
             $table->string('alamat_peserta_didik',100);
-            $table->string('nama_orang_tua',30);
-            $table->string('alamat_orang_tua',100);
+            $table->string('nama_ayah',30);
+            $table->string('alamat_ayah',100);
+            $table->string('nama_ibu',30);
+            $table->string('alamat_ibu',100);
             $table->string('wali_peserta_didik',30)->nullable();
             $table->string('alamat_wali_peserta_didik',100)->nullable();
 

@@ -32,8 +32,10 @@ class PesertaDidikController extends Controller
             'agama' => 'required|max:10',
             'pendidikan_sebelumnya' => 'required|max:10',
             'alamat_peserta_didik' => 'required|max:100',
-            'nama_orang_tua' => 'required|max:30',
-            'alamat_orang_tua' => 'required|max:100',
+            'nama_ayah' => 'required|max:30',
+            'alamat_ayah' => 'required|max:100',
+            'nama_ibu' => 'required|max:30',
+            'alamat_ibu' => 'required|max:100',
             'wali_peserta_didik' => '',
             'alamat_wali_peserta_didik' => ''
         ], [
@@ -57,10 +59,14 @@ class PesertaDidikController extends Controller
             'pendidikan_sebelumnya.max' => 'Pendidikan sebelumnya maksimal 10 karakter.',
             'alamat_peserta_didik.required' => 'Alamat peserta didik wajib diisi.',
             'alamat_peserta_didik.max' => 'Alamat peserta didik maksimal 100 karakter.',
-            'nama_orang_tua.required' => 'Nama orang tua wajib diisi.',
-            'nama_orang_tua.max' => 'Nama orang tua maksimal 30 karakter.',
-            'alamat_orang_tua.required' => 'Alamat orang tua wajib diisi.',
-            'alamat_orang_tua.max' => 'Alamat orang tua maksimal 100 karakter.',
+            'nama_ayah.required' => 'Nama Ayah wajib diisi.',
+            'nama_ibu.required' => 'Nama Ibu wajib diisi.',
+            'nama_ayah.max' => 'Nama Ayah maksimal 30 karakter.',
+            'nama_ibu.max' => 'Nama Ibu maksimal 30 karakter.',
+            'alamat_ayah.required' => 'Alamat Ayah wajib diisi.',
+            'alamat_ibu.required' => 'Alamat Ibu wajib diisi.',
+            'alamat_ayah.max' => 'Alamat Ayah maksimal 100 karakter.',
+            'alamat_ibu.max' => 'Alamat ibu maksimal 100 karakter.',
         ]);
 
         PesertaDidik::create($request->all());
@@ -86,8 +92,12 @@ class PesertaDidikController extends Controller
             'agama' => 'required|max:10',
             'pendidikan_sebelumnya' => 'required|max:10',
             'alamat_peserta_didik' => 'required|max:100',
-            'nama_orang_tua' => 'required|max:30',
-            'alamat_orang_tua' => 'required|max:100',
+             'nama_ayah' => 'required|max:30',
+            'alamat_ayah' => 'required|max:100',
+            'nama_ibu' => 'required|max:30',
+            'alamat_ibu' => 'required|max:100',
+            'wali_peserta_didik' => '',
+            'alamat_wali_peserta_didik' => ''
         ]);
 
         $pesertaDidik = PesertaDidik::findOrFail($nisn);

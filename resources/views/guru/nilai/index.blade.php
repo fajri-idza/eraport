@@ -48,12 +48,14 @@
                         </ul>
                     </td>
                     <td>
+                        @if(auth()->guard('guru')->user()->id === $n->guru_id)
                         <a href="{{ route('guru.nilai.edit', $n->id) }}" class="btn btn-sm btn-warning">Edit</a>
                         <form action="{{ route('guru.nilai.destroy', $n->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Yakin mau hapus?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                         </form>
+                        @endif
                     </td>
                 </tr>
             @empty

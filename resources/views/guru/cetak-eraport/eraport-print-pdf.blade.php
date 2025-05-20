@@ -55,7 +55,7 @@
     <tr><td></td><td><td style="width: 20%"><strong>Tahun Pelajaran</strong></td><td>: {{ $eraport->tahun }}/{{ $eraport->tahun+1 }}</td></td></tr>
 </table>
 
-<table class="table table-bordered" style="font-size: 10px; padding: 2px">
+<table class="table table-bordered" style="font-size: 10px; padding: 1px">
     <thead>
         <tr>
             <th style="width: 3%">No</th>
@@ -68,8 +68,8 @@
     </thead>
     <tbody>
         @php
-            $maxRows = 9;
-            $headerMulokRow = 6; // baris ke-7
+            $maxRows = 10;
+            $headerMulokRow = 7; // baris ke-8
             $nomor = 1;
             $rowsUsed = 0;
         @endphp
@@ -184,6 +184,34 @@
         @if ($eraport->ekstrakurikuler->count() < 2)
             <tr>
                 <td style="padding: 2px; line-height: 1;">{{ $eraport->ekstrakurikuler->count() + 1 }}</td>
+                <td style="padding: 2px; line-height: 1;"></td>
+                <td style="padding: 2px; line-height: 1;"></td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width: 3%;padding: 2px;">No</th>
+            <th style="width: 25%;padding: 2px;">Prestasi</th>
+            <th style="width: 50%;padding: 2px;">Keterangan</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($eraport->prestasi->take(2) as $key => $ekstra)
+            <tr>
+                <td style="padding: 2px; line-height: 1;">{{ $key+1 }}</td>
+                <td style="padding: 2px; line-height: 1;">{{ $ekstra->nama_prestasi }}</td>
+                <td style="padding: 2px; line-height: 1;">{{ $ekstra->nilai }}</td>
+            </tr>
+        @endforeach
+
+        <!-- Tampilkan row kosong jika data ekstrakurikuler kurang dari 2 -->
+        @if ($eraport->prestasi->count() < 2)
+            <tr>
+                <td style="padding: 2px; line-height: 1;">{{ $eraport->prestasi->count() + 1 }}</td>
                 <td style="padding: 2px; line-height: 1;"></td>
                 <td style="padding: 2px; line-height: 1;"></td>
             </tr>
